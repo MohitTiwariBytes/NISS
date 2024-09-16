@@ -1,0 +1,19 @@
+html, body, #root{
+  height: 100%;
+  width: 100%;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Nohemi Regular";
+  src: url("./assets/Fonts/Nohemi-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Nohemi Bold";
+  src: url("./assets/Fonts/Nohemi-Bold.ttf");
+}

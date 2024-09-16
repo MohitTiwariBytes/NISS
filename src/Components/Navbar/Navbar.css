@@ -1,0 +1,65 @@
+.main-navbar {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    font-family: "Nohemi Regular";
+    z-index: 100; 
+}
+
+.navbar {
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+}
+
+.leftNavbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 13px;
+    position: absolute;
+    width: 300px;
+}
+
+.rightNavbar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navigation {
+    display: flex;
+    gap: 20px;
+}
+
+.navigation span {
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 5px; 
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.navigation span::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: var(--span-line-width, 0); 
+    background-color: black;
+    transition: width 0.3s ease-out; 
+}
+
+@media (max-width: 676px) {
+    .navigation {
+        display: none;
+    }
+}
