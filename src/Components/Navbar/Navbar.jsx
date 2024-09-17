@@ -14,16 +14,10 @@ const Navbar = () => {
         if (!open) {
             // Animate the opening of the menu
             gsap.to(topHamMenuRef.current, {
-                height: '100%', // Set to 100% height
+                height: '60%', // Set to 60% height
                 duration: 0.5, // Animation duration
                 ease: 'power4.out',
             });
-
-            gsap.to(".line1", {
-                background: "white",
-                duration: 0.2,
-                ease: 'power4.out'
-            })
 
             // Animate the opacity of the text spans with a slight delay
             gsap.to(spansRef.current, {
@@ -40,16 +34,7 @@ const Navbar = () => {
                 ease: 'power4.in',
             });
 
-            gsap.to(".line1", {
-                background: "black",
-                duration: 0.2,
-                ease: 'power4.out'
-            })
-            gsap.to(".line2", {
-                background: "black",
-                duration: 0.2,
-                ease: 'power4.out'
-            })
+            
 
             // Fade out the text spans
             gsap.to(spansRef.current, {
@@ -83,9 +68,9 @@ const Navbar = () => {
     return (
         <nav className="main-navbar">
             <div className="navbar">
-                <div className="leftNavbar">
+                <div onClick={() =>{window.location.replace("/")}} className="leftNavbar">
                     <img style={{ height: "50px" }} src={Logo} alt="Logo" />
-                    <h1>New India Software Solutions</h1>
+                    <h1>New India Software Solutions PVT LTD</h1>
                 </div>
                 <div className="rightNavbar">
                     <div className="navigation">
@@ -111,7 +96,8 @@ const Navbar = () => {
                         ))}
                     </div>
                 </div>
-                <div className="ham-menu">
+            </div>
+            <div className="ham-menu">
                     <div onClick={handleHamClick} className="menuButton">
                         <div className={open ? "line1 active" : "line1"}></div>
                         <div className={open ? "line2 active" : "line1"}></div>
@@ -138,15 +124,9 @@ const Navbar = () => {
                                     {text}
                                 </span>
                             ))}
-                            <div className="bottomTexts">
-                                <a href="https://instagram.com/">INSTAGRAM</a>
-                                <div className="lineDivider"></div>
-                                <a href="https://instagram.com/">LINKEDIN</a>
-                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </nav>
     );
 };
