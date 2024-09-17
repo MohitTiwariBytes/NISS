@@ -58,8 +58,89 @@
     transition: width 0.3s ease-out; 
 }
 
+.menuButton{
+    width: 80px;
+    height: 80px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1000;
+}
+
+
+.line1, .line2{
+    width: 70%;
+    height: 2px;
+    background: black;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+}
+
+.line1.active{
+    transform: rotate(45deg);
+}
+
+.line2.active{
+    transform: rotate(-45deg);
+    margin-top: -8px;
+}
+
+.topHamMenu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: rgb(17, 17, 17);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.texts{
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.texts span{
+    font-size: 11.4vw;
+    color: rgb(240, 240, 240);
+}
+
+.bottomTexts{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottomTexts a{
+    font-size: 14px;
+    color: rgb(240, 240, 240);
+}
+
 @media (max-width: 676px) {
     .navigation {
         display: none;
+    }
+
+    .menuButton{
+        display: flex;
+    }
+}
+
+@media (max-width: 437px){
+    .leftNavbar h1{
+        font-size: 17px;
+    }
+
+    .leftNavbar{
+        width: 250px;
     }
 }
