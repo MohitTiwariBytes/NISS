@@ -3,9 +3,12 @@ import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css"; // Locomotive Scroll CSS
 import "./Contact.css";
 import Navbar from "../../Components/Navbar/Navbar";
+import gsap from "gsap";
 
 const Contact = () => {
   const scrollRef = useRef(null); // Reference to the scroll container
+  const topTextRef = useRef(null); // Reference to the text element
+  const cardRef = useRef(null); // Reference to the contact card container
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
 
   useEffect(() => {
@@ -32,6 +35,33 @@ const Contact = () => {
     };
   }, [isMobile]);
 
+  useEffect(() => {
+    // GSAP animations
+    gsap.fromTo(
+      topTextRef.current,
+      { y: 50, opacity: 0 }, // Initial state
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: "power2.out",
+      }
+    );
+
+    gsap.fromTo(
+      cardRef.current.children,
+      { y: 50, opacity: 0 }, // Initial state for staggered elements
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "power2.out",
+        delay: 0.3, // Delay after the text animation
+      }
+    );
+  }, []);
+
   return (
     <div className="main-contact-page">
       {/* Navbar outside of the scrollable container */}
@@ -46,12 +76,12 @@ const Contact = () => {
         data-scroll-container={!isMobile ? true : undefined}
       >
         <div className="mainContactPage">
-          <div className="topTextContact" data-scroll>
+          <div className="topTextContact" data-scroll ref={topTextRef}>
             <h1>
               Let's Work <z>Together!</z>
             </h1>
           </div>
-          <div className="mainContactCard" data-scroll>
+          <div className="mainContactCard" data-scroll ref={cardRef}>
             <div className="contactCardOuter">
               <div className="contactCardInner">
                 <input id="name" type="text" placeholder="Name" />
