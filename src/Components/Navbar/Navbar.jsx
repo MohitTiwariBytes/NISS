@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Navbar.css';
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/logoWhite.png";
 import gsap from 'gsap';
 
 const Navbar = () => {
@@ -14,7 +14,7 @@ const Navbar = () => {
         if (!open) {
             // Animate the opening of the menu
             gsap.to(topHamMenuRef.current, {
-                height: '60%', // Set to 60% height
+                height: '70%', // Set to 60% height
                 duration: 0.5, // Animation duration
                 ease: 'power4.out',
             });
@@ -70,7 +70,7 @@ const Navbar = () => {
             <div className="navbar">
                 <div onClick={() =>{window.location.replace("/")}} className="leftNavbar">
                     <img style={{ height: "50px" }} src={Logo} alt="Logo" />
-                    <h1>New India Software Solutions PVT LTD</h1>
+                    <h1>New India Software Solutions PVT LTD </h1>
                 </div>
                 <div className="rightNavbar">
                     <div className="navigation">

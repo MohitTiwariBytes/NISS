@@ -1,11 +1,13 @@
 html, body, #root{
   height: 100%;
   width: 100%;
+  background-color: var(--black);
 }
 
 *{
   margin: 0;
   padding: 0;
+  font-family: "Nohemi Regular";
 }
 
 @font-face {
@@ -16,4 +18,10 @@ html, body, #root{
 @font-face {
   font-family: "Nohemi Bold";
   src: url("./assets/Fonts/Nohemi-Bold.ttf");
+}
+
+:root{
+  --orange: #F64A16;
+  --black: #1E1C1B;
+  --white: #F6F3F0;
 }

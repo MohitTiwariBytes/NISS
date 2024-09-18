@@ -9,13 +9,13 @@
 }
 
 .navbar {
-    height: 100%;
+    height: 100px;
     padding: 20px;
     display: flex;
     align-items: center;
     flex-direction: row;
     position: relative;
-    background: rgb(255, 255, 255);
+    background: var(--black);
     z-index: 10000;
 }
 
@@ -28,6 +28,11 @@
     position: absolute;
     width: 300px;
     cursor: pointer;
+}
+
+.leftNavbar h1{
+    color: var(--white);
+    font-weight: 400;
 }
 
 .rightNavbar {
@@ -48,6 +53,7 @@
     padding-bottom: 5px; 
     font-size: 16px;
     font-weight: 500;
+    color: var(--white);
 }
 
 .navigation span::before {
@@ -57,7 +63,7 @@
     left: 0;
     height: 2px;
     width: var(--span-line-width, 0); 
-    background-color: black;
+    background-color: var(--white);
     transition: width 0.3s ease-out; 
 }
 
@@ -79,7 +85,7 @@
 .line1, .line2{
     width: 70%;
     height: 2px;
-    background: black;
+    background: var(--white);
     border-radius: 20px;
     transition: all 0.2s ease;
 }
@@ -100,7 +106,7 @@
     right: 0;
     width: 100%;
     height: 0%;
-    background-color: white;
+    background-color: var(--black);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,7 +123,7 @@
 
 .texts span{
     font-size: 11.4vw;
-    color: black;
+    color: var(--white);
 }
 
 @media (max-width: 676px) {
