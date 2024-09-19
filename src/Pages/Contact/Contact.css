@@ -53,6 +53,7 @@ z {
   align-items: center;
   margin-top: 100px;
   flex-direction: column;
+  max-width: 1300px;
 }
 
 .contactCardInner {
@@ -101,6 +102,23 @@ z {
   }
 }
 
+@media (max-width: 1289px) {
+  .contactCardInner input {
+    width: 200px;
+  }
+}
+
+@media (max-width: 823px) {
+  .contactCardInner input {
+    width: 150px;
+  }
+}
+
+@media (max-width: 679px) {
+  .contactCardInner input {
+    width: 300px;
+  }
+}
 @media (max-width: 587px) {
   .contactCardOuter {
     width: 73%;
