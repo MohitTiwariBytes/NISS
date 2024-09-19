@@ -4,36 +4,11 @@ import "locomotive-scroll/dist/locomotive-scroll.css"; // Locomotive Scroll CSS
 import "./Contact.css";
 import Navbar from "../../Components/Navbar/Navbar";
 import gsap from "gsap";
+import Footer from "../../Components/Footer/Footer";
 
 const Contact = () => {
-  const scrollRef = useRef(null); // Reference to the scroll container
   const topTextRef = useRef(null); // Reference to the text element
   const cardRef = useRef(null); // Reference to the contact card container
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1000);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    if (!isMobile) {
-      const scroll = new LocomotiveScroll({
-        el: scrollRef.current, // Attach to the scrollRef element
-        smooth: true, // Enable smooth scrolling
-      });
-
-      // Clean up Locomotive Scroll when component unmounts
-      return () => {
-        scroll.destroy();
-      };
-    }
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [isMobile]);
 
   useEffect(() => {
     // GSAP animations
@@ -70,18 +45,14 @@ const Contact = () => {
       </div>
 
       {/* Scrollable container */}
-      <div
-        ref={scrollRef}
-        className="main-contact-content"
-        data-scroll-container={!isMobile ? true : undefined}
-      >
+      <div className="main-contact-content">
         <div className="mainContactPage">
-          <div className="topTextContact" data-scroll ref={topTextRef}>
+          <div className="topTextContact" ref={topTextRef}>
             <h1>
               Let's Work <z>Together!</z>
             </h1>
           </div>
-          <div className="mainContactCard" data-scroll ref={cardRef}>
+          <div className="mainContactCard" ref={cardRef}>
             <div className="contactCardOuter">
               <div className="contactCardInner">
                 <input id="name" type="text" placeholder="Name" />
@@ -93,6 +64,10 @@ const Contact = () => {
               <button>Send</button>
             </div>
           </div>
+        </div>
+
+        <div style={{ position: "relative", top: "0" }} className="footer">
+          <Footer />
         </div>
       </div>
     </div>

@@ -1,16 +1,15 @@
 .main-contact-page {
   width: 100%;
-  min-height: 150vh; /* Ensure the page height fills the viewport */
+  height: 100%;
   background-color: var(--black);
   color: var(--white);
   position: relative;
   font-family: "Nohemi Regular";
-  overflow: hidden; /* Let Locomotive Scroll handle overflow */
 }
 
 .mainContactPage {
   width: 100%;
-  min-height: 150vh; /* Ensure this section is large enough for scrolling */
+  height: 100%;
   display: flex;
   flex-direction: column;
   font-family: "Nohemi Regular";
