@@ -6,13 +6,17 @@ import * as XLSX from "xlsx"; // Import XLSX for Excel export
 const AdminPanel = () => {
   const [projects, setProjects] = useState({});
   const [selectedStatus, setSelectedStatus] = useState({});
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // To manage password authentication
+  const [password, setPassword] = useState("");
 
   useEffect(() => {
     // Fetch all projects when the component mounts
-    fetchProjects((data) => {
-      setProjects(data || {}); // Handle null data gracefully
-    });
-  }, []);
+    if (isAuthenticated) {
+      fetchProjects((data) => {
+        setProjects(data || {}); // Handle null data gracefully
+      });
+    }
+  }, [isAuthenticated]);
 
   const handleStatusChange = (projectId, status) => {
     updateProjectStatus(projectId, status);
@@ -37,13 +41,42 @@ const AdminPanel = () => {
     XLSX.writeFile(workbook, "ProjectsData.xlsx");
   };
 
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (password === "niss123") {
+      setIsAuthenticated(true);
+    } else {
+      alert("Incorrect password. Please try again.");
+    }
+  };
+
+  if (!isAuthenticated) {
+    return (
+      <div className="login-container">
+        <h1>Admin Panel Login</h1>
+        <form onSubmit={handleLogin}>
+          <input
+            type="password"
+            className="login-input"
+            placeholder="Enter Admin Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit" className="login-button">
+            Login
+          </button>
+        </form>
+      </div>
+    );
+  }
+
   return (
     <div className="admin-panel-container">
       <h1>Admin Panel</h1>
 
       {/* Download as Excel Button */}
       <button className="download-button" onClick={downloadAsExcel}>
-        Download data as Excel
+        Download as Excel
       </button>
 
       <table className="admin-table">
