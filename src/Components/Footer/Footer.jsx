@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import SlidingUpText from "../SlidingUpText/SlidingUpText"; // Import the SlidingUpText component
 import "./Footer.css";
 import logo from "../../assets/logoBlack.png";
 
 const Footer = () => {
-  const [lines, setLines] = useState([]);
-
   useEffect(() => {
     // Register ScrollTrigger plugin with GSAP
     gsap.registerPlugin(ScrollTrigger);
@@ -27,30 +26,6 @@ const Footer = () => {
         },
       }
     );
-
-    // Split the text into words dynamically
-    const text = "We are a Web-Design agency based in India!";
-    const splitText = text.split(" ");
-    setLines(splitText); // Store the split lines in state
-
-    // Use GSAP after ensuring DOM elements are rendered
-    setTimeout(() => {
-      // Apply animation to all lines within the wrapper
-      gsap.fromTo(
-        "#split-line",
-        { y: 50 }, // Start from below with 0 opacity
-        {
-          y: 0,
-          duration: 1,
-          ease: "power3.inOut",
-          scrollTrigger: {
-            trigger: ".wrapper", // Trigger when .wrapper comes into view
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    }, 100); // Delay to ensure DOM elements are present
   }, []);
 
   return (
@@ -70,19 +45,26 @@ const Footer = () => {
           </div>
 
           <div className="textFooter">
-            <div className="wrapper">
-              {lines.map((line, index) => (
-                <div key={index} className={"split-line"}>
-                  <h1 id="split-line">{line}</h1>
-                </div>
-              ))}
-            </div>
+            <SlidingUpText text="We are a Web-Design agency based in India!" />
           </div>
 
           <div className="footerSocials">
             <a href="instagram.com">Instagram</a>
             <a href="facebook.com">Facebook</a>
             <a href="youtube.com">Youtube</a>
+          </div>
+          <div className="footerAddress">
+            <SlidingUpText
+              text={
+                "Near Jagannath Mandir, Street No.15, Sector 121, Noida,Uttar-Pradesh, India - 201301"
+              }
+            ></SlidingUpText>
+            <span>
+              +91 1234567890,{" "}
+              <a href="mailto:newindiasoftwaresolutions@gmail.com">
+                newindiasoftwaresolutions@gmail.com
+              </a>
+            </span>
           </div>
         </div>
         <div className="rightFooter">

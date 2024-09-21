@@ -1,0 +1,165 @@
+/* General styling */
+body {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Admin Panel Container */
+.admin-panel-container {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--black);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Table styling */
+.admin-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid var(--white);
+  color: var(--white);
+}
+
+.admin-table th {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.admin-table td {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+td a {
+  color: var(--white);
+}
+
+/* Dropdown Styling for status change */
+.admin-table select {
+  padding: 8px;
+  background-color: var(--black);
+  color: var(--white);
+  border: 1px solid var(--white);
+  border-radius: 5px;
+}
+
+/* Login form container */
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: var(--black);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Input field styling */
+.login-input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background-color: var(--black);
+  border: 1px solid var(--white);
+  border-radius: 5px;
+  color: var(--white);
+}
+
+/* Button styling */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: 1px solid var(--white);
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Adjust admin panel container padding */
+  .admin-panel-container {
+    padding: 10px;
+  }
+
+  /* Adjust table styling for smaller screens */
+  .admin-table th,
+  .admin-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  /* Make the table scrollable horizontally */
+  .admin-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  /* Responsive login container */
+  .login-container {
+    width: 90%;
+    padding: 15px;
+    margin: 50px auto;
+  }
+
+  /* Responsive form input and button */
+  .login-input,
+  .login-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Smaller fonts for very small screens */
+  .admin-table th,
+  .admin-table td {
+    font-size: 12px;
+  }
+
+  .login-input,
+  .login-button {
+    font-size: 12px;
+  }
+
+  .login-container {
+    margin: 30px auto;
+    padding: 10px;
+  }
+}
+
+/* Download as Excel button */
+.download-button {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.download-button:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}

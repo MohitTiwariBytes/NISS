@@ -77,6 +77,9 @@ z {
 .contactCardInner textarea {
   width: 91%;
   height: 150px;
+  max-width: 858px;
+  resize: none;
+  border-radius: 10px;
   background: var(--black);
   border: 1px solid white;
   color: var(--white);

@@ -1,5 +1,50 @@
-.main-home-page{
-    width: 100%;
-    height: 100%;
-    background: #1E1C1B;
+.main-home-page {
+  width: 100%;
+  height: 100%;
+  background: #1e1c1b;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.home-page {
+  width: 100%;
+  height: 100%;
+}
+
+.firstSection {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+}
+
+.firstSectionTop {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  min-width: 100vw;
+}
+
+.textFirstSection h1 {
+  color: var(--white);
+  font-weight: 400;
+  margin-left: 20px;
+  font-family: "Dirtyline";
+  font-size: 4vw;
+}
+
+.textFirstSection {
+  width: 90%;
+}
+
+.firstSectionBottom {
+  width: 100%;
+  height: 30%;
 }

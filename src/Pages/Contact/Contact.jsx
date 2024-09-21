@@ -5,10 +5,18 @@ import "./Contact.css";
 import Navbar from "../../Components/Navbar/Navbar";
 import gsap from "gsap";
 import Footer from "../../Components/Footer/Footer";
+import { writeData } from "../../Backend/Index.js";
 
 const Contact = () => {
   const topTextRef = useRef(null); // Reference to the text element
   const cardRef = useRef(null); // Reference to the contact card container
+
+  // State variables for form inputs
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [services, setServices] = useState("");
+  const [budget, setBudget] = useState("");
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     // GSAP animations
@@ -37,6 +45,19 @@ const Contact = () => {
     );
   }, []);
 
+  // Function to handle form submission
+  const handleSubmit = () => {
+    // Call the writeData function with form values
+    writeData(name, email, services, budget, message);
+
+    // Optionally reset form fields after submission
+    setName("");
+    setEmail("");
+    setServices("");
+    setBudget("");
+    setMessage("");
+  };
+
   return (
     <div className="main-contact-page">
       {/* Navbar outside of the scrollable container */}
@@ -55,13 +76,43 @@ const Contact = () => {
           <div className="mainContactCard" ref={cardRef}>
             <div className="contactCardOuter">
               <div className="contactCardInner">
-                <input id="name" type="text" placeholder="Name" />
-                <input id="email" type="email" placeholder="Email" />
-                <input id="services" type="text" placeholder="Services" />
-                <input id="budget" type="text" placeholder="Budget" />
-                <textarea name="message" placeholder="Message" />
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <input
+                  id="services"
+                  type="text"
+                  placeholder="Services"
+                  value={services}
+                  onChange={(e) => setServices(e.target.value)}
+                />
+                <input
+                  id="budget"
+                  type="text"
+                  placeholder="Budget"
+                  value={budget}
+                  onChange={(e) => setBudget(e.target.value)}
+                />
+                <textarea
+                  name="message"
+                  placeholder="Message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                />
               </div>
-              <button>Send</button>
+              <button onClick={handleSubmit}>Send</button>{" "}
+              {/* Add onClick to button */}
             </div>
           </div>
         </div>

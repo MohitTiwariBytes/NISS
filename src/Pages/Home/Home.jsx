@@ -1,30 +1,27 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import LocomotiveScroll from "locomotive-scroll";
-import "locomotive-scroll/dist/locomotive-scroll.css"; // Import the CSS for Locomotive Scroll
 import "./Home.css";
 import Navbar from "../../Components/Navbar/Navbar.jsx";
+import SlidingUpText from "../../Components/SlidingUpText/SlidingUpText.jsx";
 
 const Home = () => {
-  const scrollRef = useRef(null);
-
-  useEffect(() => {
-    const scroll = new LocomotiveScroll({
-      el: scrollRef.current,
-      smooth: true,
-    });
-
-    // Clean up the scroll instance on component unmount
-    return () => {
-      if (scroll) scroll.destroy();
-    };
-  }, []);
-
   return (
-    <div ref={scrollRef} className="main-home-page">
-      <div className="home-page" data-scroll-container>
+    <div className="main-home-page">
+      <div className="home-page">
         <div className="navbar">
           <Navbar></Navbar>
+        </div>
+        <div className="firstSection">
+          <div className="firstSectionTop">
+            <div className="textFirstSection">
+              <SlidingUpText
+                text={
+                  "we are niss™️, a digital web design agency based in india. we create stunning websites that drive action and elevate your brand."
+                }
+              ></SlidingUpText>
+            </div>
+          </div>
+          <div className="firstSectionBottom"></div>
         </div>
       </div>
     </div>

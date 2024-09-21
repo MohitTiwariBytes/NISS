@@ -12,6 +12,11 @@ body,
   font-family: "Nohemi Regular";
 }
 
+@font-face{
+  font-family: "Dirtyline";
+  src: url('./assets/Fonts/Dirtyline.otf')
+}
+
 @font-face {
   font-family: "Nohemi Regular";
   src: url("./assets/Fonts/Nohemi-Regular.ttf");
@@ -26,4 +31,5 @@ body,
   --orange: #f64a16;
   --black: #1e1c1b;
   --white: #f6f3f0;
+  --light-orange: #fa673a;
 }
