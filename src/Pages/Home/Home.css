@@ -13,6 +13,8 @@
 .home-page {
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .firstSection {
@@ -22,6 +24,9 @@
   flex-direction: row;
   position: absolute;
   top: 0;
+  z-index: 1;
+
+  max-width: 1800px;
 }
 
 .firstSectionTop {
@@ -29,7 +34,12 @@
   height: 100%;
   display: flex;
   align-items: center;
-  min-width: 100vw;
+}
+
+.star-shape {
+  position: absolute;
+  top: 400px;
+  right: 50px;
 }
 
 .textFirstSection h1 {
@@ -38,13 +48,73 @@
   margin-left: 20px;
   font-family: "Dirtyline";
   font-size: 4vw;
+  position: relative;
+  z-index: 1;
 }
 
 .textFirstSection {
-  width: 90%;
+  width: 60%;
 }
 
 .firstSectionBottom {
   width: 100%;
   height: 30%;
+}
+
+.textSmall h1 {
+  font-size: 23px;
+  font-family: "Nohemi Regular";
+  margin-left: 0;
+  margin-top: 0px;
+}
+
+.textSmall {
+  width: 700px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.line {
+  width: 80%;
+}
+
+@media (max-width: 1770px) {
+  .textFirstSection h1 {
+    font-size: 7vw;
+  }
+
+  .textFirstSection {
+    width: 90%;
+  }
+
+  .textSmall h1 {
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 809px) {
+  .star-shape img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 968px) {
+  .textSmall h1 {
+    font-size: 3vw;
+  }
+
+  .textSmall {
+    width: 90%;
+  }
+
+  .star-shape {
+    top: 600px;
+    right: 50px;
+    position: absolute;
+    z-index: 0;
+  }
+}
+
+@media (max-width: 463px) {
 }

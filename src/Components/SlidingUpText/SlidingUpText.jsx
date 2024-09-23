@@ -10,7 +10,7 @@ const SlidingUpText = ({ text }) => {
     // Use GSAP to apply animation to the text
     gsap.fromTo(
       "#split-line",
-      { y: 110 }, // Start from below
+      { y: 50 }, // Start from below
       {
         y: 0,
         duration: 1,

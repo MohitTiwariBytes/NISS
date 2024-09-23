@@ -1,0 +1,108 @@
+.data-entry-container {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Form row layout */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Make inputs full-width on smaller screens */
+.form-row input {
+  padding: 8px;
+  border: 1px solid var(--white);
+  background-color: var(--black);
+  color: var(--white);
+  flex: 1;
+  min-width: 180px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: var(--white);
+  color: var(--black);
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+button:hover {
+  background-color: var(--black);
+  color: var(--white);
+  border: 1px solid var(--white);
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+th,
+td {
+  border: 1px solid var(--white);
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--black);
+}
+
+td {
+  background-color: var(--black);
+}
+
+/* Responsive table */
+table {
+  width: 100%;
+  table-layout: auto;
+}
+
+@media (max-width: 768px) {
+  /* Stack inputs vertically on small screens */
+  .form-row {
+    display: block;
+  }
+
+  .form-row input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+  }
+
+  /* Make table scrollable on small screens */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th,
+  td {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

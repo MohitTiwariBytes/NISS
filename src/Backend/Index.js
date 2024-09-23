@@ -38,6 +38,16 @@ function writeData(name, email, services, budget, message) {
   sendEmail(name, email, services, budget, message);
 }
 
+function writeDataEntry(index, data) {
+  set(ref(database, "dataEntry/" + index), data)
+    .then(() => {
+      console.log("Data saved successfully at index:", index);
+    })
+    .catch((error) => {
+      console.error("Failed to save data:", error);
+    });
+}
+
 // Fetching all projects from the database
 function fetchProjects(callback) {
   const projectsRef = ref(database, "projects/");
@@ -92,4 +102,4 @@ function sendEmail(name, email, services, budget, message) {
     });
 }
 
-export { writeData, fetchProjects, updateProjectStatus };
+export { writeData, fetchProjects, updateProjectStatus, writeDataEntry };

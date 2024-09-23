@@ -12,9 +12,9 @@ body,
   font-family: "Nohemi Regular";
 }
 
-@font-face{
+@font-face {
   font-family: "Dirtyline";
-  src: url('./assets/Fonts/Dirtyline.otf')
+  src: url("./assets/Fonts/Dirtyline.otf");
 }
 
 @font-face {

@@ -199,10 +199,6 @@ a:hover {
   .logoTexts h1 {
     width: 100%;
   }
-
-  .split-line h1 {
-    font-size: 23px;
-  }
 }
 
 @media (max-width: 1350px) {
