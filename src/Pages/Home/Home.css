@@ -15,6 +15,8 @@
   height: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .firstSection {
@@ -22,11 +24,9 @@
   height: 100%;
   display: flex;
   flex-direction: row;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-
   max-width: 1800px;
+  min-height: 100vh;
+  position: relative;
 }
 
 .firstSectionTop {
@@ -52,6 +52,10 @@
   z-index: 1;
 }
 
+.textFirstSection span {
+  font-family: "Dirtyline";
+}
+
 .textFirstSection {
   width: 60%;
 }
@@ -66,6 +70,7 @@
   font-family: "Nohemi Regular";
   margin-left: 0;
   margin-top: 0px;
+  filter: blur(0px);
 }
 
 .textSmall {
@@ -76,6 +81,14 @@
 
 .line {
   width: 80%;
+}
+
+.secondSection {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (max-width: 1770px) {
@@ -109,10 +122,14 @@
   }
 
   .star-shape {
-    top: 600px;
+    top: 500px;
     right: 50px;
     position: absolute;
     z-index: 0;
+  }
+
+  .star-shape img {
+    width: 100px;
   }
 }
 

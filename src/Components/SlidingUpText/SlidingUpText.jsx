@@ -15,6 +15,7 @@ const SlidingUpText = ({ text }) => {
         y: 0,
         duration: 1,
         ease: "power3.inOut",
+        stagger: 0.02,
         scrollTrigger: {
           trigger: ".wrapper", // Trigger when the wrapper comes into view
           start: "top 80%",
